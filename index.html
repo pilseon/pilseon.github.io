@@ -7,59 +7,83 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PilSeon_PortFolio</title>
     <style>
-        body {
-  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 25% rgba(255,254,234,1) 35%, #B7E8EB 80%);
-  overflow: hidden;
-}
+        body, ul, li {
+      margin: 0;
+      padding: 0;
+    }
 
-.ocean {
-  height: 5%;
-  width:100%;
-  position:absolute;
-  bottom:0;
-  left:0;
-  background: #015871;
-}
+    a {
+      text-decoration: none;
+      list-style: inherit;
+    }
+    .container {
+      display: flex;
+    }
 
-.wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
-}
+    .left_bar {
+      background-color: black;
+      width: 300px;
+      height: 100%;
+      position: fixed;
+    }
 
-.wave:nth-of-type(2) {
-  top: -175px;
-  animation: wave 6.5s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-  opacity: 1;
-}
+    .left_top {
+      text-align: center;
 
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
+    }
 
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0,-25px,0);
-  }
-  50% {
-    transform: translate3d(0,5px,0);
-  }
-}
+    .left_top > img {
+      margin-top: 30px;
+      border: 10px solid gray;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit:cover;
+    }
+
+    .left_top > h2 {
+      color: white;
+    }
+
+    .left_top > div {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .left_top > div > a {
+      display: flex;
+      background-color: #212431;
+      border-radius: 50%;
+      padding: 5px;
+      align-items: center;
+    }
+    .left_top > div > a > img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
     </style>
 </head>
 <body>
-<div class="ocean">
-    <div class="wave"></div>
-    <div class="wave"></div>
+<div class="container">
+    <section class="left_bar">
+        <div class="left_top">
+            <img src="https://github.com/user-attachments/assets/46a4389b-390b-4484-b053-5d175b0ca4cc" alt="취업사진">
+            <h2>유 필 선</h2>
+            <div>
+                <a href="https://www.instagram.com/justkind_ps/"><img src="https://github.com/user-attachments/assets/6c786f63-0bca-43f5-96e3-29e4287e0f71" alt="인스타"></a>
+                <a href="https://github.com/pilseon"><img src="https://github.com/user-attachments/assets/7cc91227-ba69-4b92-9250-b80c9b820e99" alt="깃허브"></a>
+                <a href="https://velog.io/@dbyo1125/posts"><img src="https://github.com/user-attachments/assets/c2049661-9658-4f75-95c3-c02f2ba797c5" alt="벨로그"></a>
+            </div>
+        </div>
+        <div class="left_middle"></div>
+        <div class="left_bottom"></div>
+    </section>
+    <section class="right_bar">
+
+    </section>
 </div>
 
 </body>
