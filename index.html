@@ -1,90 +1,293 @@
-<!doctype html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+    <!-- 테일윈드-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
     <title>PilSeon_PortFolio</title>
     <style>
-        body, ul, li {
-      margin: 0;
-      padding: 0;
-    }
+        #typing {
+  font-size: 50px;
+  display: inline-block;
+    position: relative;
+}
 
-    a {
-      text-decoration: none;
-      list-style: inherit;
-    }
-    .container {
-      display: flex;
-    }
+#typing::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px; /* 텍스트와 밑줄 사이의 간격 조절 */
+    width: 100%;
+    height: 3px; /* 밑줄의 두께 */
+    background-color: green; /* 밑줄의 색상 */
+  }
 
-    .left_bar {
-      background-color: black;
-      width: 300px;
-      height: 100%;
-      position: fixed;
-    }
+.right_bar > .inpo_bar {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* 페이드 인 효과 */
+    padding: 20px;
+  }
 
-    .left_top {
-      text-align: center;
+.inpo_bar {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에서 슬라이드 인 효과를 위해 위치 조정 */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* 페이드 인 및 슬라이드 인 효과 */
+    padding: 20px;
+    min-height: 100vh; /* inpo_bar의 최소 높이를 뷰포트 높이로 설정 */
+  }
 
-    }
+  /* 스크롤 시 inpo_bar가 보이도록 설정 */
+  .inpo_bar.visible {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 슬라이드 인 */
+  }
 
-    .left_top > img {
-      margin-top: 30px;
-      border: 10px solid gray;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit:cover;
-    }
-
-    .left_top > h2 {
-      color: white;
-    }
-
-    .left_top > div {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .left_top > div > a {
-      display: flex;
-      background-color: #212431;
-      border-radius: 50%;
-      padding: 5px;
-      align-items: center;
-    }
-    .left_top > div > a > img{
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
+.right_bar > .inpo_bar > p {
+  font-size: 20px;
+} */
     </style>
 </head>
-<body>
-<div class="container">
-    <section class="left_bar">
-        <div class="left_top">
-            <img src="https://github.com/user-attachments/assets/46a4389b-390b-4484-b053-5d175b0ca4cc" alt="취업사진">
-            <h2>유 필 선</h2>
-            <div>
-                <a href="https://www.instagram.com/justkind_ps/"><img src="https://github.com/user-attachments/assets/6c786f63-0bca-43f5-96e3-29e4287e0f71" alt="인스타"></a>
-                <a href="https://github.com/pilseon"><img src="https://github.com/user-attachments/assets/7cc91227-ba69-4b92-9250-b80c9b820e99" alt="깃허브"></a>
-                <a href="https://velog.io/@dbyo1125/posts"><img src="https://github.com/user-attachments/assets/c2049661-9658-4f75-95c3-c02f2ba797c5" alt="벨로그"></a>
+
+<body class="font-sans">
+
+<div class="flex">
+    <section class="bg-black w-[300px] fixed h-full">
+        <div class="text-center p-8">
+            <img src="https://github.com/user-attachments/assets/46a4389b-390b-4484-b053-5d175b0ca4cc" alt="취업사진" class="w-36 h-36 rounded-full border-4 border-gray-500 mx-auto mb-4 object-cover">
+            <h2 class="text-white text-xl">YU PIL SEON</h2>
+            <div class="flex justify-center mt-4 space-x-12">
+                <a href="https://github.com/pilseon" class="bg-gray-700 rounded-full p-2">
+                    <img src="https://github.com/user-attachments/assets/7cc91227-ba69-4b92-9250-b80c9b820e99" alt="깃허브" class="w-12 h-12 rounded-full">
+                </a>
+                <a href="https://velog.io/@dbyo1125/posts" class="bg-gray-700 rounded-full p-2">
+                    <img src="https://github.com/user-attachments/assets/c2049661-9658-4f75-95c3-c02f2ba797c5" alt="벨로그" class="w-12 h-12 rounded-full">
+                </a>
             </div>
         </div>
-        <div class="left_middle"></div>
-        <div class="left_bottom"></div>
-    </section>
-    <section class="right_bar">
 
+        <nav class="mt-12">
+            <ul class="text-center space-y-4">
+                <li><a href="#inpo" class="text-white text-lg uppercase hover:text-green-400 transition-all">소개</a></li>
+                <li><a href="#record" class="text-white text-lg uppercase hover:text-green-400 transition-all">프로젝트</a></li>
+                <li><a href="#project" class="text-white text-lg uppercase hover:text-green-400 transition-all">이력</a></li>
+            </ul>
+        </nav>
     </section>
+
+    <section class="ml-[300px] w-full">
+        <div class="h-screen flex flex-col justify-center items-center bg-green-500 text-white">
+            <div class="text-6xl font-bold">안녕하세요!</div>
+            <div class="flex text-4xl mt-4">
+                <span>풀스택&nbsp;</span>
+                <div id="typing"></div>
+            </div>
+        </div>
+
+        <div class="min-h-screen p-8 opacity-0 transform translate-y-5 transition-all duration-1000 ease-in-out" id="inpo">
+            <h2 class="font-black text-3xl inline border-b-4 border-green-500 mb-4">Introduction</h2>
+            <h3 class="font-bold text-2xl mt-4">기본을 중심으로 성장하는 개발자가 되겠습니다.</h3>
+            <div class="mt-4">
+                <ul class="mt-4 text-xl">
+                    <li>생일</li>
+                    <li>이름</li>
+                    <li>이름</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="min-h-screen p-8" id="record">
+            <h2 class="font-black text-3xl inline border-b-4 border-green-500 mb-4">Projects</h2>
+            <div class="mt-4">
+                <ul class="mt-4 text-xl">
+                    <li class="mb-12">
+                        <p class="font-bold text-2xl">SBS 웹개발 풀스택과정 초급프로젝트 제작</p>
+                        <p class="text-base text-gray-400">2024.04.03 - 2024.04.23</p>
+                        <div class="flex">
+                            <div class="mr-4"> <img src="https://github.com/user-attachments/assets/3683cccb-d91f-4894-838b-a17d060adb22" alt="" class="object-cover rounded-full w-[250px] h-[250px]"></div>
+                            <div class="flex-grow" style="flex-basis: 0;">
+                                <div class="flex flex-grow mt-2 mb-2">
+                                <p>프로젝트 명 :&nbsp;</p>
+                                <p class=" font-bold">간단한 두뇌 회전 게임(PROBLEMATIC MONSTER)</p>
+                            </div>
+                            <p class="mb-2">Java의 기본적인 문법들을 사용하여 간단하게 제작한 게임으로, 코딩을 1개월 배우고 난 후에 시작한 프로젝트 작업입니다. 팀원 없이 혼자 제작한 것으로 Java와 mysql을 사용하여 member와 lanking의 정보를 DB에 저장하게 만들었습니다.</p>
+                            <a href="https://github.com/pilseon/Project_1" class="text-yellow-400">게임 제작 Project GitHub 바로가기</a>
+                        </div>
+            </div>
+            </li>
+            <li class="mb-12">
+                <p class="font-bold text-2xl">SBS 웹개발 풀스택과정 중급프로젝트 제작</p>
+                <p class="text-base text-gray-400">2024.05.27 - 2024.06.27</p>
+                <div class="flex">
+                    <div class="mr-4"> <img src="https://github.com/Junsu-Ahn/cookers/assets/132266117/ac703b2f-8c3a-4b14-b296-c17baa756a97" alt="" class="object-cover rounded-full w-[250px] h-[250px]"></div>
+                    <div class="flex-grow" style="flex-basis: 0;">
+                        <div class="flex mt-2 mb-2">
+                            <p>프로젝트 명 :&nbsp;</p>
+                            <p class="font-bold">오늘은 내가 요리사 (오.내.요)</p>
+                        </div>
+                        <p class="mb-2">처음으로 시작한 팀 프로젝트이며, 기존의 자바를 베이스로 SpringBoot를 활용하여 웹사이트를 제작하였습니다. FontAwesome과 jQuery 등을 사용하여 전반적인 디자인을 구성하였으며, bootStarp을 사용하지 않고 직접적으로 css 작업을 하여 웹사이트를 제작하였습니다. 또한 요리 레시피 공유를 목적으로 하여 레시피 부분의 CRUD의 구성을 담당하였습니다. </p>
+                        <a href="https://github.com/Junsu-Ahn/cookers" class="text-yellow-400">Cookers 웹제작 Project GitHub 바로가기</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p class="font-bold text-2xl">SBS 웹개발 풀스택과정 최종프로젝트 제작</p>
+                <p class="text-base text-gray-400">2024.07.12 - 2024.09.03</p>
+                <div class="flex">
+                    <div class="mr-4"> <img src="https://github.com/user-attachments/assets/1c871a74-31f9-498a-9bdf-0fda3adf97d4" alt="" class="object-cover rounded-full w-[250px] h-[250px]"></div>
+                    <div class="flex-grow" style="flex-basis: 0;">
+                        <div class="flex mt-2 mb-2">
+                            <p>프로젝트 명 :&nbsp;</p>
+                            <p class="font-bold">Trip_In_JEJU</p>
+                        </div>
+                        <p class="mb-2">해당 프로젝트는 제주도 여행을 계획하고 장소에 대한 구성을 확인하는 사이트 제작의 목적을 두었으며, 처음으로 조장을 맡게 된 프로젝트입니다. 이 프로젝트에서는 GPS를 활용한 리뷰작성 하는 것과 캘린더를 활용한 계획 수립, CHAT BOT을 활용하여 여행에 도움을 받을 수 있는 작업을 맡았습니다. 조장으로써 조원들과 함께 의견조율을 하며 합을 맞추기도 하였습니다.</p>
+                        <a href="https://github.com/pilseon/Trip_in_JEJU" class="text-yellow-400">Trip_In_Jeju 웹 제작 Project GitHub 바로가기</a>
+                    </div>
+                </div>
+            </li>
+            </ul>
+        </div>
 </div>
 
+<div class="min-h-screen p-8" id="project">
+    <h2 class="font-black text-3xl inline border-b-4 border-green-500 mb-4">Experiences</h2>
+    <h3 class="font-bold text-2xl mt-4 mb-2">학력</h3>
+    <table class="min-w-full bg-white border border-gray-300 text-center">
+        <thead class="bg-gray-100 border-b-2 border-gray-200">
+        <tr>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">학교명</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">전공</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">졸업여부</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">입학년월</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">졸업년월</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6">동대전고등학교</td>
+            <td class="py-3 px-6">자연계열</td>
+            <td class="py-3 px-6">졸업</td>
+            <td class="py-3 px-6">2011.3</td>
+            <td class="py-3 px-6">2014.3</td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6">대전폴리텍대학</td>
+            <td class="py-3 px-6">로봇자동화과</td>
+            <td class="py-3 px-6">졸업</td>
+            <td class="py-3 px-6">2018.3</td>
+            <td class="py-3 px-6">2019.3</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3 class="font-bold text-2xl mt-4 mb-2">병역사항</h3>
+    <table class="min-w-full bg-white border border-gray-300 text-center">
+        <thead class="bg-gray-100 border-b-2 border-gray-200">
+        <tr>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">군별</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">계급</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">병과</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">복무기간</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6">해병대</td>
+            <td class="py-3 px-6">병장</td>
+            <td class="py-3 px-6">수송병</td>
+            <td class="py-3 px-6">2015.8 ~ 2017.5</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3 class="font-bold text-2xl mt-4 mb-2">경력사항</h3>
+    <table class="min-w-full bg-white border border-gray-300 text-center">
+        <thead class="bg-gray-100 border-b-2 border-gray-200">
+        <tr>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">순번</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">회사명</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">근무 기간</th>
+            <th class="py-3 px-6 text-sm font-semibold text-gray-600">직급</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tr>
+        <tr class="hover:bg-gray-50">
+            <td class="py-3 px-6">3</td>
+            <td class="py-3 px-6">㈜진합</td>
+            <td class="py-3 px-6">2019.10 ~ 2023.12 (50개월)</td>
+            <td class="py-3 px-6">사원</td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6">2</td>
+            <td class="py-3 px-6">피자알볼로</td>
+            <td class="py-3 px-6">2017.6 ~ 2019.10 (20개월)</td>
+            <td class="py-3 px-6">매니저</td>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6">1</td>
+            <td class="py-3 px-6">롯데리아</td>
+            <td class="py-3 px-6">2014.3 ~ 2015.7 (16개월)</td>
+            <td class="py-3 px-6">바이트</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+</div>
+<script>
+    const text = "개발자 유필선 입니다.";
+let i = 0;
+let isDeleting = false;
+const speed = 150;
+const pause = 1000;
+
+function typeWriter() {
+    const element = document.getElementById("typing");
+
+    element.innerHTML = text.substring(0, i);
+
+    if (!isDeleting && i < text.length) {
+        i++;
+        setTimeout(typeWriter, speed);
+    } else if (isDeleting && i > 0) {
+        i--;
+        setTimeout(typeWriter, speed / 2);
+    } else if (i === text.length) {
+        isDeleting = true;
+        setTimeout(typeWriter, pause);
+    } else if (i === 0) {
+        isDeleting = false;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+typeWriter();
+
+window.addEventListener('scroll', function() {
+    const inpoBar = document.querySelector('#inpo');
+    const topBarHeight = document.querySelector('.h-screen').offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > topBarHeight / 2) {
+        inpoBar.classList.add('opacity-100', 'translate-y-0');
+        inpoBar.classList.remove('opacity-0', 'translate-y-5');
+    } else {
+        inpoBar.classList.remove('opacity-100', 'translate-y-0');
+        inpoBar.classList.add('opacity-0', 'translate-y-5');
+    }
+});
+</script>
 </body>
+
 </html>
